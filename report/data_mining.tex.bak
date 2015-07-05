@@ -120,7 +120,7 @@ one who did all the really hard work. All the codes, methods and approaches are 
 
 \maketitle
 \begin{abstract}
-PM2.5 is a critical environmental issue being discussed nowadays; when the amount of PM2.5 reaches a certain level, it does harm to both human beings and the whole environment. Therefore, predicting the value of PM2.5 becomes one of the critical problems, for this will allow citizens and the departments concerned to implement corresponding measures ahead of time. In this paper, I use data **********
+PM2.5 is a critical environmental issue being discussed nowadays; when the amount of PM2.5 reaches a certain level, it does harm to both human beings and the whole environment. Therefore, predicting the value of PM2.5 becomes one of the critical problems, for this will allow citizens and the departments concerned to implement corresponding measures ahead of time. In this paper, I use data mining techniques to solve two problems concerning PM2.5. The first is to predict the PM2.5 value of the next time session while the other is to determine the PM2.5 pollution level category of the next day. I mainly use neural network combined with some other models to solve the two problems and the experimental results indicates good performance. Finally, I discuss some possible approaches to refine the process to end this paper.
 \end{abstract}
 
 
@@ -128,7 +128,7 @@ PM2.5 is a critical environmental issue being discussed nowadays; when the amoun
 \keywords{Data Mining, Regression, Classification PM2.5, Health and Environment}
 
 \section{Introduction}
-\footnote{This project does not ask us to hand in the source code, but I upload most of the source codes in a Github repository . You can find that in https://github.com/ZhaoweiTan/pm}We are living on an unhealthy Mother Earth. The industrialization and modernization accommodate us with a better life, while failing to provide a healthier environment. The Partical Pollution(PM) is a rising problem which has drawn more and more attention nowadays. Many websites, like Baidu, put real-time PM value in their frontpages. The general public and the government have been aware of this insidious air pollution, trying to find ways to solve this environmental puzzle.
+\footnote{This project does not ask us to hand in the source code, but I upload most of the source codes in a Github repository . You can find that in https://github.com/ZhaoweiTan/pm.}We are living on an unhealthy Mother Earth. The industrialization and modernization accommodate us with a better life, while failing to provide a healthier environment. The Partical Pollution(PM) is a rising problem which has drawn more and more attention nowadays. Many websites, like Baidu, put real-time PM value in their frontpages. The general public and the government have been aware of this insidious air pollution, trying to find ways to solve this environmental puzzle.
 
 PM, is a mixture of solids and liquid droplets floating in the air\cite{pm}. Some particles are released directly from a specific source, while others form in complicated chemical reactions in the atmosphere. Particles come in a wide range of sizes. Particles less than or equal to 10 micrometers in diameter are so small that they can get into the lungs, potentially causing serious health problems. Ten micrometers is less than the width of a single human hair.
 
@@ -156,11 +156,13 @@ Next, I consider a more practical problem. Considering the scenario that you wan
 Given historic data $[X,Y]$, in which $X=[x_{1}^{T},x_{2}^{T},...,x_{n}^{T}]^{T}$, and $Y=[y_1, y_2, ..., y_n]$, where $x_i$ is the historic data series corresponds to the average daily PM2.5 pollution category $y_i \in \{1, 2, 3, 4, 5, 6, 7\}$. Our goal is to us predict the average daily PM2.5 level category $y_t$ when we have observed $x_t$. Therefore, this is a multi-classification problem.
 \end{theorem}
 
+After this, I found that the training data is so insufficient so that I modify that a little bit, changing 7 categories into 3, that is, healthy(0-50), moderate(51-100) and unhealthy(>100), respectively. In other words, $y_i \in \{1, 2, 3\}$
+
 
 
 
 \section{Data Analysis and Processing}
-After I have defined the scope of this paper and the specific problem description, it is high time that I introduced the dataset and the approach handle the data. This may highlight the property of the information we get and provide a insight of the approaches we implement to achieve the goal and solve the problems.
+After I have defined the scope of this paper and the specific problem description, it is high time that I introduced the dataset and the ways to handle the data. This may highlight the property of the information we get and provide a insight of the approaches we implement to achieve the goal and solve the problems.
 
 \subsection{Data Description}
 The dataset we get is provided by U.S. Department of State\cite{data}. In the dataset, we have the PM2.5 data in Beijing, from 2008 to 2014, Chengdu, from 2012 to 2014, Guangzhou, from 2011 to 2014, Shanghai, from 2011 to 2014 and Shenyang, from 2013 to 2014. In each csv sheet, there contains the time of each record and corresponding PM value of that time. Since the Beijing has the most PM2.5 data records, I mostly train the model using Beijing data.
@@ -205,11 +207,11 @@ Recall that in the last section, I illustrated that much raw data is missing in 
 
 Considering that every city has a disparate environment and thus the model should be trained within different cities, I henceforth only choose data from Beijing to do this Beijing. Without the lost of generality, the same approaches can be used in other cities, as long as we have sufficient data from that city.
 
-For problem 1, I make an assumption that the PM level will only be related to recent historic data; the data that is far earlier than the predicted time will have little or nothing to do with that time's value. I collect all the records that their past 24-hour data are complete, and have a total of 47407 records altogether in Beijing. I separate them to be my training, cross validation and testing data. Basically, here I harness the AR model, where the dimension is set to be 24, to train the data and predict the PM value.
+For problem 1, I make an assumption that the PM level will only be related to recent historic data; the data that is far earlier than the predicted time will have little or nothing to do with that time's value. I collect all the records that their past 24-hour data are complete, and have a total of 47407 records altogether in Beijing. I separate them to be my training, cross validation and testing data. Basically, here I harness the AR model, where the dimension of AR model is set to be 24, to train the data and predict the PM value.
 
- Alternatively, I select another set of features to do the experiment. Instead of only choosing the past hours' data only, I select several past hour's data and the same hour's data in the past days, taking the fact that PM value is related to the time in a day into account.
+ Alternatively, I select another set of features to do the experiment. Instead of only choosing the past hours' data only, I add the same hour's data in the past days into feature space, taking the fact that PM value is probably related to the time in a day into account. So the total dimension is two more than the first one, namely 26.
 
-For problem 2, I calculate the daily average PM2.5 value in Beijing and collect all the records that their past 7-dat data are complete. Now I have a total of ************ records of data. I separate them to be my training, cross validation and testing data.
+For problem 2, I calculate the daily average PM2.5 value in Beijing and collect all the records that their past 3-day data are complete. Finally I have a total of 1505 records of data. I separate them to be my training, cross validation and testing data as well .
 
 
 
@@ -239,7 +241,7 @@ For Problem 2:
     \item ...
 \end{itemize}
 
-We are quite familiar with these methods, so I do not bother introducing these approaches from scratch. Consider the time and my poor laptop configuration, I tried some of these methods, and then show the corresponding result in the next section.
+We are quite familiar with these methods, so I do not bother introducing these approaches from scratch. Considering the time and my poor laptop configuration, I tried some of these methods, and then show the corresponding result in the next section.
 
 
 
@@ -248,36 +250,60 @@ We are quite familiar with these methods, so I do not bother introducing these a
 My data processing tasks are finished on a 4G memory MacOS X computer. These tasks utilize Python 2.7 scripts. My machine learning problems are solved using a 4G memory Window 7. The version of MATLAB is MATLAB 2013b.
 
 \subsection{Results for Problem 1}
-As stated before, due to the constraints of time and other resources, I perform one method to solve the Problem 1, that is the Neural Network, because Neural Network fits the data in a polynomial and thus a better way. Also, the neural network will not take much time for the amount of data is not that much. Thanks to the friendly MATLAB machine learning toolkits\cite{nn}, I avoid writing bunch of codes and debugging for a long time. I set 70\% as the training set, 15\% as the cross validation set, and the rest 15\% as the testing set. The neurons int the hidden layer is set to be 50.
+As stated before, due to the constraints of time and other resources, I perform one method to solve the Problem 1, that is the Neural Network, because Neural Network fits the data in a polynomial and thus a better way. Also, the neural network will not take much time for the amount of data is not that much. Thanks to the friendly MATLAB machine learning toolkits\cite{nn}, I avoid writing bunch of codes and debugging for a long time. I set 70\% as the training set, 15\% as the cross validation set, and the rest 15\% as the testing set. The neurons in the hidden layer is set to be 50.
 
-For the model, as was stated in 3.2, we use two sets of features. Their performance is presented in the Figure 1 and Figure 2. 
+For the model, as was stated in 3.2, we use two sets of features. Their performance is presented in the Figure 1 and Figure 2.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.4]{pic/reg1.pdf}
+\includegraphics[scale = 0.4, trim = 300 150 300 150]{pic/reg1.pdf}
 \caption{The Neural Network fitting using past hours features}
 \end{figure}
 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.4]{pic/reg2.pdf}
+\includegraphics[scale = 0.4, trim = 300 150 300 150]{pic/reg2.pdf}
 \caption{The Neural Network fitting using past hours features and same-time past day features}
 \end{figure}
 
 
-As we can see, both feature spaces perform well and has a negligible accuracy difference. We can now safe to state that using the local information is quite enough; the PM2.5 value of one time can be sufficiently tell from its local information
+As we can see, the two different feature spaces perform well and has a negligible accuracy difference, both with R equals more than 0.95. We can now safe to state that using the local information is quite enough; the PM2.5 value of one time can be sufficiently tell from its local information.
 
 
-In the meantime, I perform a two dimension polynomial regression to see how many dimensions are sufficient enough. I calculated the Mean Absolute Percentage Error(MAPE) to compare the different dimensions. The result is shown in Figure 3. We can see that *********
+In the meantime, I perform a two dimension polynomial regression to see how many dimensions are sufficient enough. I calculated the Mean Absolute Percentage Error(MAPE) to compare the different dimensions. The result is shown in Figure 3. We can see that using only past two days feature can fit a decent result, further proving the locality property of the PM2.5 value.
 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale = 0.4, trim = 350 250 350 250]{pic/lg.pdf}
+\caption{The MAPE of using data of past x days}
+\end{figure}
 
 
 
 
 
 \subsection{Results for Problem 2}
+We now try to solve problem 2 using neural network. The experimental result is shown in Figure 4, 5 and 6.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale = 0.8]{pic/cl3.png}
+\caption{The MAPE of using data of past x days}
+\end{figure}
 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale = 0.4, trim = 300 150 300 150]{pic/cl1.pdf}
+\caption{The MAPE of using data of past x days}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale = 0.4, trim = 300 150 300 150]{pic/cl2.pdf}
+\caption{The MAPE of using data of past x days}
+\end{figure}
+
+As we can tell, the result is not so good; although the determined data has around 50\& accuracy, which is higher than a random guess, which is 33\%, a lot of input cannot be classified. This is because the amount of training data is so small that we can not introduce a good model. If we have more data, this situation can be solved because we can judge from the result and the shape of the curve that this approach is promising.
 
 \section{Future Work}
 
@@ -301,7 +327,7 @@ Finally, I made some remarks on the whole approach, indicating some room for fur
 
 %\end{document}  % This is where a 'short' article might terminate
 \section{Acknowledgments}
-I learned bunch of knowledge out of this project, including the basics of several machine learning toolkits in MATLAB, the coding tricks, writing the paper, so on and so forth.\footnote{Actually, I never thought of that writing a paper is such an exhausting and skillful work. From now on I respect more of those 8-page, 10-page paper. It is almost desperate to type so much words.} Everything just help me improve and let me become more prepared for my Ph.D career. Also, this long journey provides me with a better insight of data mining and machine learning, which is, and will continue to be, the hottest topic in computer science.
+I have learned bunch of knowledge out of this project, including the basics of several machine learning toolkits in MATLAB, the coding tricks, writing the paper, so on and so forth.\footnote{Actually, I never thought of that writing a paper is such an exhausting and skillful work. From now on I respect more of those 8-page, 10-page paper. It is almost desperate to type so much words.} Everything just help me improve and let me become more prepared for my Ph.D career\footnote{YES! I have made up my mind to apply for Ph.D!}. Also, this long journey provides me with a better insight of data mining and machine learning, which is, and will continue to be, the hottest topic in computer science.
 
 Cannot believe this semester is going to over.  THANK YOU to TAs for a whole semester's great help. THANK YOU to Prof. Yuan for your wonderful instructions. This is a fruitful course and I do deeply feel the elegance of data mining. Hope that everything is alright!
 

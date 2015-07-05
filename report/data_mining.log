@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.11)  6 JUL 2015 00:56
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.11)  6 JUL 2015 01:21
 entering extended mode
 **E:/Courses/DataMining/project/pm/report/data_mining.tex
 (E:/Courses/DataMining/project/pm/report/data_mining.tex
@@ -269,13 +269,13 @@ Overfull \hbox (6.49316pt too wide) in paragraph at lines 168--169
 File: pic/reg1.pdf Graphic file (type pdf)
  <use pic/reg1.pdf>
 Package pdftex.def Info: pic/reg1.pdf used on input line 259.
-(pdftex.def)             Requested size: 4.8173pt x 197.53421pt.
+(pdftex.def)             Requested size: 44.9667pt x 197.53421pt.
 
 <pic/reg2.pdf, id=22, 614.295pt x 794.97pt>
 File: pic/reg2.pdf Graphic file (type pdf)
  <use pic/reg2.pdf>
 Package pdftex.def Info: pic/reg2.pdf used on input line 266.
-(pdftex.def)             Requested size: 4.8173pt x 197.53421pt.
+(pdftex.def)             Requested size: 44.9667pt x 197.53421pt.
 
 <pic/lg.pdf, id=23, 614.295pt x 794.97pt>
 File: pic/lg.pdf Graphic file (type pdf)
@@ -287,29 +287,25 @@ Package pdftex.def Info: pic/lg.pdf used on input line 278.
 File: pic/cl3.png Graphic file (type png)
  <use pic/cl3.png>
 Package pdftex.def Info: pic/cl3.png used on input line 290.
-(pdftex.def)             Requested size: 256.55884pt x 82.50835pt.
-
-Overfull \hbox (16.55884pt too wide) in paragraph at lines 290--291
- [][] 
- []
+(pdftex.def)             Requested size: 224.48714pt x 72.1942pt.
 
 <pic/cl1.pdf, id=25, 614.295pt x 794.97pt>
 File: pic/cl1.pdf Graphic file (type pdf)
  <use pic/cl1.pdf>
 Package pdftex.def Info: pic/cl1.pdf used on input line 296.
-(pdftex.def)             Requested size: 4.8173pt x 197.53421pt.
+(pdftex.def)             Requested size: 6.02174pt x 246.92152pt.
 
 <pic/cl2.pdf, id=26, 614.295pt x 794.97pt>
 File: pic/cl2.pdf Graphic file (type pdf)
  <use pic/cl2.pdf>
 Package pdftex.def Info: pic/cl2.pdf used on input line 302.
-(pdftex.def)             Requested size: 4.8173pt x 197.53421pt.
+(pdftex.def)             Requested size: 6.02174pt x 246.92152pt.
  [3 <E:/Courses/DataMining/project/pm/report/pic/reg1.pdf> <E:/Courses/DataMini
 ng/project/pm/report/pic/reg2.pdf> <E:/Courses/DataMining/project/pm/report/pic
-/lg.pdf> <E:/Courses/DataMining/project/pm/report/pic/cl3.png>]
-(E:\Courses\DataMining\project\pm\report\data_mining.bbl [4 <E:/Courses/DataMin
-ing/project/pm/report/pic/cl1.pdf> <E:/Courses/DataMining/project/pm/report/pic
-/cl2.pdf>]
+/lg.pdf>] [4 <E:/Courses/DataMining/project/pm/report/pic/cl3.png> <E:/Courses/
+DataMining/project/pm/report/pic/cl1.pdf> <E:/Courses/DataMining/project/pm/rep
+ort/pic/cl2.pdf>]
+(E:\Courses\DataMining\project\pm\report\data_mining.bbl
 Overfull \hbox (20.23921pt too wide) in paragraph at lines 17--19
 \T1/aer/m/n/9 http://www.airnow.gov/index.cfm?action=aqibasics.particle.  
  []
@@ -320,7 +316,7 @@ Overfull \hbox (20.23921pt too wide) in paragraph at lines 17--19
 Here is how much of TeX's memory you used:
  3650 strings out of 495354
  45775 string characters out of 3183859
- 113788 words of memory out of 3000000
+ 112788 words of memory out of 3000000
  6755 multiletter control sequences out of 15000+200000
  54618 words of font info for 74 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -336,7 +332,7 @@ m/cmti9.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/CTEX/MiKTeX
 /fonts/type1/urw/helvetic/uhvr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb
 8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on data_mining.pdf (5 pages, 5823728 bytes).
+Output written on data_mining.pdf (5 pages, 5824609 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

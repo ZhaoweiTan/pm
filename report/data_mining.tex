@@ -201,11 +201,11 @@ Shenyang&2014&357&8760&4.1\% \\ \hline \hline
 \end{table}
 
 \subsection{Training Data Acquisition}
-Now that we have the raw data, we shall convert that into the format which can be recognized by MATLAB. I wrote a Python script to do the transformation.
+Now that we have the raw data, I shall convert that into the format which can be recognized by MATLAB. I wrote a Python script to do the transformation.
 
 Recall that in the last section, I illustrated that much raw data is missing in the original csv. So in Python script I carefully select the recordings that are available for training, which means I choose the records that has a complete prior PM data, instead of some missing ones.
 
-Considering that every city has a disparate environment and thus the model should be trained within different cities, I henceforth only choose data from Beijing to do this Beijing. Without the lost of generality, the same approaches can be used in other cities, as long as we have sufficient data from that city.
+Considering that every city has a disparate environment and thus the model should be trained within different cities, I henceforth only choose data from Beijing to do this Beijing. Without the lost of generality, the same approaches can be used in other cities, as long as I have sufficient data from that city.
 
 For problem 1, I make an assumption that the PM level will only be related to recent historic data; the data that is far earlier than the predicted time will have little or nothing to do with that time's value. I collect all the records that their past 24-hour data are complete, and have a total of 47407 records altogether in Beijing. I separate them to be my training, cross validation and testing data. Basically, here I harness the AR model, where the dimension of AR model is set to be 24, to train the data and predict the PM value.
 
@@ -221,7 +221,7 @@ For problem 2, I calculate the daily average PM2.5 value in Beijing and collect 
 \section{Learning Approaches}
 Two problems are regression problem and classification problems, respectively. So different methods are employed to solve the problems.
 
-Here are several models that we can train to solve the two problems:
+Here are several models that I can train to solve the two problems:
 
 
 For Problem 1:
@@ -250,28 +250,28 @@ We are quite familiar with these methods, so I do not bother introducing these a
 My data processing tasks are finished on a 4G memory MacOS X computer. These tasks utilize Python 2.7 scripts. My machine learning problems are solved using a 4G memory Window 7. The version of MATLAB is MATLAB 2013b.
 
 \subsection{Results for Problem 1}
-As stated before, due to the constraints of time and other resources, I perform one method to solve the Problem 1, that is the Neural Network, because Neural Network fits the data in a polynomial and thus a better way. Also, the neural network will not take much time for the amount of data is not that much. Thanks to the friendly MATLAB machine learning toolkits\cite{nn}, I avoid writing bunch of codes and debugging for a long time. I set 70\% as the training set, 15\% as the cross validation set, and the rest 15\% as the testing set. The neurons int the hidden layer is set to be 50.
+As stated before, due to the constraints of time and other resources, I perform one method to solve the Problem 1, that is the Neural Network, because Neural Network fits the data in a polynomial and thus a better way. Also, the neural network will not take much time for the amount of data is not that much. Thanks to the friendly MATLAB machine learning toolkits\cite{nn}, I avoid writing bunch of codes and debugging for a long time. I set 70\% as the training set, 15\% as the cross validation set, and the rest 15\% as the testing set. The neurons in the hidden layer is set to be 50.
 
-For the model, as was stated in 3.2, we use two sets of features. Their performance is presented in the Figure 1 and Figure 2.
+For the model, as was stated in 3.2, I use two sets of features. Their performances are presented in the Figure 1 and Figure 2.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.4, trim = 300 150 300 150]{pic/reg1.pdf}
+\includegraphics[scale = 0.4, trim = 250 150 250 150]{pic/reg1.pdf}
 \caption{The Neural Network fitting using past hours features}
 \end{figure}
 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.4, trim = 300 150 300 150]{pic/reg2.pdf}
+\includegraphics[scale = 0.4, trim = 250 150 250 150]{pic/reg2.pdf}
 \caption{The Neural Network fitting using past hours features and same-time past day features}
 \end{figure}
 
 
-As we can see, the two different feature spaces perform well and has a negligible accuracy difference, both with R equals more than 0.95. We can now safe to state that using the local information is quite enough; the PM2.5 value of one time can be sufficiently tell from its local information.
+As we can see, the two different feature spaces perform well and have a negligible accuracy difference, both with R equals more than 0.95. We can now safe to state that using the local information is quite enough; the PM2.5 value of one time can be sufficiently told from its local information.
 
 
-In the meantime, I perform a two dimension polynomial regression to see how many dimensions are sufficient enough. I calculated the Mean Absolute Percentage Error(MAPE) to compare the different dimensions. The result is shown in Figure 3. We can see that using only past two days feature can fit a decent result, further proving the locality property of the PM2.5 value.
+In the meantime, I perform a two dimension polynomial regression to see how many hours of past data are sufficient enough. I calculated the Mean Absolute Percentage Error(MAPE) to compare the different dimensions. The result is shown in Figure 3. We can see that using only past two hours features can fit a decent result, further proving the locality property of the PM2.5 value.
 
 \begin{figure}[ht]
 \centering
@@ -284,26 +284,26 @@ In the meantime, I perform a two dimension polynomial regression to see how many
 
 
 \subsection{Results for Problem 2}
-We now try to solve problem 2 using neural network. The experimental result is shown in Figure 4, 5 and 6.
+I now try to solve problem 2 using neural network. I also set 70\% as the training set, 15\% as the cross validation set, and the rest 15\% as the testing set. The neurons in the hidden layer is set to be 20. The experimental results are shown in Figure 4, 5 and 6.
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.8]{pic/cl3.png}
-\caption{The MAPE of using data of past x days}
+\includegraphics[scale = 0.7]{pic/cl3.png}
+\caption{Fitting Results of Problem 2}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.4, trim = 300 150 300 150]{pic/cl1.pdf}
-\caption{The MAPE of using data of past x days}
+\includegraphics[scale = 0.5, trim = 300 150 300 150]{pic/cl1.pdf}
+\caption{The Confusion Matrix}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.4, trim = 300 150 300 150]{pic/cl2.pdf}
-\caption{The MAPE of using data of past x days}
+\includegraphics[scale = 0.5, trim = 300 150 300 150]{pic/cl2.pdf}
+\caption{The ROC Curve}
 \end{figure}
 
-As we can tell, the result is not so good; although the determined data has around 50\& accuracy, which is higher than a random guess, which is 33\%, a lot of input cannot be classified. This is because the amount of training data is so small that we can not introduce a good model. If we have more data, this situation can be solved because we can judge from the result and the shape of the curve that this approach is promising.
+As we can tell, the result is not so good; although the determined data has around 50\% accuracy, which is higher than a random guess, which is 33\%, a lot of input cannot be classified. This is because the amount of training data is so small that I can not introduce a good model. If I have more data, this situation can be solved because we can judge from the result and the shape of the curve that this approach is promising.
 
 \section{Future Work}
 
@@ -311,23 +311,23 @@ As we can tell, the result is not so good; although the determined data has arou
 Retrospectively, considering all the defects in the whole process, there exist many ways to improve the performance.
 
 \begin{itemize}
-    \item The approaches in this paper only considers the past PM value as the feature to train the model. Actually, more features can be added to train a better model. For example, we can add the wind strength, precipitation and other meteorological effects. These effects are highly related to the PM2.5 value.
+    \item The approaches in this paper only considers the past PM value as the features to train the model. Actually, more features can be added to train a better model. For example, I can add the wind strength, precipitation and other meteorological effects. These effects are highly related to the PM2.5 value.
     \item In the previous data selection, I treated every time in a day equally; I trained several uniform models for the whole data. Actually there should have been some difference and the resulting model for each time shall be different. I can thus choose some time in a day to see whether training separately could provide a better result.
-    \item We can define different problems and solve them. For example, my friend, Jiaming, aims to predict a long-term value series instead of a single value. This mission, of course, is a far more difficult task, and as far as I know his model does not perform so well according to its complexity. I can solve that conundrum in future or even propose some more interesting and challenging problems.
+    \item I can define other problems and solve them. For example, my friend, Jiaming, aims to predict a long-term value series instead of a single value. This mission, of course, is a far more difficult task, and as far as I know his model does not perform so well according to its complexity. I can try solving that conundrum in future or even propose some more interesting and challenging problems.
 \end{itemize}
 
 \section{Conclusions}
 The importance of the environment is beyond words. Environment governance is one of the most urgent contemporary issues. Before we can fully emancipate ourselves out of the pollution problems, we can use the cutting-edge data mining techniques to predict the value of some pollution index, and thus take corresponding measures.
 
-In this paper, I lead a roadmap from the beginning to the end. I first give a full description of the PM2.5 problems to be solved in this paper. Next, the Chapter 2 starts from getting the data to processing the data, making a compact, simple feature vector for those built in MATLAB machine learning toolkits.
+In this paper, I lead a roadmap from the beginning to the end. I first give a full description of the PM2.5 problems to be solved in this paper. Next, the Chapter 3 starts from getting the data to processing the data, making a compact, simple feature vector for those built in MATLAB machine learning toolkits.
 
-After these work. some famous models which have been taught in class and have been well built in MATLAB are imposed on the given feature vectors and thus generate different models. I use these disparate models, more concretely, polynomial regression and neural network, to solve the proposed problems, and the corresponding results are given and discussed.
+After these work, some famous models which have been taught in class and have been well built in MATLAB are imposed on the given feature vectors and thus generate different models. I use these disparate models, more concretely, polynomial regression and neural network, to solve the proposed problems, and the corresponding results are given and discussed.
 
-Finally, I made some remarks on the whole approach, indicating some room for further study to improve. Some of them may be easier to realize than others, but each one will benefit the result to some extent after a careful coding and tuning.
+Finally, I make some remarks on the whole approach, indicating some room for further study to improve. Some of them may be easier to realize than others, but each one will benefit the result to some extent after a careful coding and tuning.
 
 %\end{document}  % This is where a 'short' article might terminate
 \section{Acknowledgments}
-I have learned bunch of knowledge out of this project, including the basics of several machine learning toolkits in MATLAB, the coding tricks, writing the paper, so on and so forth.\footnote{Actually, I never thought of that writing a paper is such an exhausting and skillful work. From now on I respect more of those 8-page, 10-page paper. It is almost desperate to type so much words.} Everything just help me improve and let me become more prepared for my Ph.D career\footnote{YES! I have made up my mind to apply for Ph.D!}. Also, this long journey provides me with a better insight of data mining and machine learning, which is, and will continue to be, the hottest topic in computer science.
+I have learned bunch of knowledge out of this project, including the basics of several machine learning toolkits in MATLAB, the coding tricks, writing the paper\footnote{Actually, I never thought of that writing a paper is such an exhausting and skillful work. From now on I respect more of those 8-page, 10-page paper. It is almost desperate to type so much words.}, so on and so forth. Everything just help me improve and let me become more prepared for my Ph.D career\footnote{YES! I have made up my mind to apply for Ph.D!}. Also, this long journey provides me with a better insight of data mining, which is, and will continue to be, the hottest topic in computer science.
 
 Cannot believe this semester is going to over.  THANK YOU to TAs for a whole semester's great help. THANK YOU to Prof. Yuan for your wonderful instructions. This is a fruitful course and I do deeply feel the elegance of data mining. Hope that everything is alright!
 
