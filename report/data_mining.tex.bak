@@ -248,25 +248,25 @@ We are quite familiar with these methods, so I do not bother introducing these a
 My data processing tasks are finished on a 4G memory MacOS X computer. These tasks utilize Python 2.7 scripts. My machine learning problems are solved using a 4G memory Window 7. The version of MATLAB is MATLAB 2013b.
 
 \subsection{Results for Problem 1}
-As stated before, due to the constraints of time and other resources, I perform one method to solve the Problem 1, that is the Neural Network, because Neural Network fits the data in a polynomial and thus a better way. Also, the neural network will not take much time for the amount of data is not that much. Thanks to the friendly MATLAB machine learning toolkits\cite{nn}, I avoid writing bunch of codes and debugging for a long time.
+As stated before, due to the constraints of time and other resources, I perform one method to solve the Problem 1, that is the Neural Network, because Neural Network fits the data in a polynomial and thus a better way. Also, the neural network will not take much time for the amount of data is not that much. Thanks to the friendly MATLAB machine learning toolkits\cite{nn}, I avoid writing bunch of codes and debugging for a long time. I set 70\% as the training set, 15\% as the cross validation set, and the rest 15\% as the testing set. The neurons int the hidden layer is set to be 50.
 
-For the model, as was stated in 3.2, we use two sets of models, and their performance is presented in the Figure 1 and Figure 2.
+For the model, as was stated in 3.2, we use two sets of features. Their performance is presented in the Figure 1 and Figure 2. 
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \includegraphics[scale = 0.4]{pic/reg1.pdf}
 \caption{The Neural Network fitting using past hours features}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
-\includegraphics[scale = 0.4]{pic/reg1.pdf}
-\caption{The Neural Network fitting using past hours features}
+\includegraphics[scale = 0.4]{pic/reg2.pdf}
+\caption{The Neural Network fitting using past hours features and same-time past day features}
 \end{figure}
 
 
-As we can see,************
+As we can see, both feature spaces perform well and has a negligible accuracy difference. We can now safe to state that using the local information is quite enough; the PM2.5 value of one time can be sufficiently tell from its local information
 
 
 In the meantime, I perform a two dimension polynomial regression to see how many dimensions are sufficient enough. I calculated the Mean Absolute Percentage Error(MAPE) to compare the different dimensions. The result is shown in Figure 3. We can see that *********
@@ -275,21 +275,6 @@ In the meantime, I perform a two dimension polynomial regression to see how many
 
 
 
-
-
-\begin{table*}[ht]
-\centering
-\caption{Experimental Results}
-\begin{tabular}{|c|c|c|c|c|} \hline
-&Testing Accuracy&English Testing Accuracy&Mandarin Testing Accuracy \\ \hline
-LR with MV & 65\% & 70\%  & 60\% \\ \hline
-LR with MP & 55\% & 60\%  & 50\% \\ \hline
-LR (biased) with MV&87.5 & 100\% & 50\%\\ \hline
-LR (biased) with MP&87.5 & 100\% & 50\%\\ \hline
-K-means & 51\% & N/A&N/A \\ \hline
-K-means (biased)& 75.5\% & N/A&N/A \\ \hline
-\end{tabular}
-\end{table*}
 
 \subsection{Results for Problem 2}
 
@@ -302,15 +287,15 @@ Retrospectively, considering all the defects in the whole process, there exist m
 \begin{itemize}
     \item The approaches in this paper only considers the past PM value as the feature to train the model. Actually, more features can be added to train a better model. For example, we can add the wind strength, precipitation and other meteorological effects. These effects are highly related to the PM2.5 value.
     \item In the previous data selection, I treated every time in a day equally; I trained several uniform models for the whole data. Actually there should have been some difference and the resulting model for each time shall be different. I can thus choose some time in a day to see whether training separately could provide a better result.
-    \item We can define different problems and solve them. For example, my friend, Jiaming, aims to predict a long-term value series instead of
+    \item We can define different problems and solve them. For example, my friend, Jiaming, aims to predict a long-term value series instead of a single value. This mission, of course, is a far more difficult task, and as far as I know his model does not perform so well according to its complexity. I can solve that conundrum in future or even propose some more interesting and challenging problems.
 \end{itemize}
 
 \section{Conclusions}
-Speech recognition is really a tough task, especially in this project for it has a small sample number but a very high dimension feature space. The essence and the most dirty works lie in this part because the learning codes are built-in in MATLAB, otherwise this will be a HUGE project.
+The importance of the environment is beyond words. Environment governance is one of the most urgent contemporary issues. Before we can fully emancipate ourselves out of the pollution problems, we can use the cutting-edge data mining techniques to predict the value of some pollution index, and thus take corresponding measures.
 
-In this paper, I lead a roadmap from the beginning to the end. The Chapter 2 starts from getting the data to the processing (segmenting, truncating, etc.) of the data, making a compact, simple feature vector for those built in machine learning toolkits.
+In this paper, I lead a roadmap from the beginning to the end. I first give a full description of the PM2.5 problems to be solved in this paper. Next, the Chapter 2 starts from getting the data to processing the data, making a compact, simple feature vector for those built in MATLAB machine learning toolkits.
 
-After these time-consuming work, some famous models which have been taught in class are imposed on the given feature vectors and thus generate different models. I run various models and disparate algorithms, namely MV and MP, to get the categories of the test data. The accuracy indicates more balanced data are needed to generate a better model.
+After these work. some famous models which have been taught in class and have been well built in MATLAB are imposed on the given feature vectors and thus generate different models. I use these disparate models, more concretely, polynomial regression and neural network, to solve the proposed problems, and the corresponding results are given and discussed.
 
 Finally, I made some remarks on the whole approach, indicating some room for further study to improve. Some of them may be easier to realize than others, but each one will benefit the result to some extent after a careful coding and tuning.
 

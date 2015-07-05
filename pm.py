@@ -11,20 +11,22 @@ def generate_data(n, k):
 	for i in range(n, len(pm)):
 		if pm[i] < 0:
 			continue
-		temp = []
-		if pm[i-48] < 0:
-			continue
-		else:
-			temp.append(pm[i-48])
-		if pm[i-72] < 0:
-			continue
-		else:
-			temp.append(pm[i-72])	
+		temp = [1]
+		# if pm[i-48] < 0:
+		# 	continue
+		# else:
+		# 	temp.append(pm[i-48])
+		# if pm[i-72] < 0:
+		# 	continue
+		# else:
+		# 	temp.append(pm[i-72])	
 
 		for j in range(1, n + 1):
 			if pm[i-j] < 0:
 				break
 			temp.append(pm[i-j])
+			temp.append(pm[i-1]*pm[i-j])
+			temp.append(pm[i-1]*pm[i-j]*pm[i-j])
 			if j == n:
 				X.append(temp)
 				Y.append([pm[i]])
@@ -51,9 +53,9 @@ for k in range(2008, 2015):
 			miss = miss + 1
 		else:
 			pm.append(int(line[7]))
-	print float(miss)/len(pm)
-	print miss
-	print len(pm)
+	# print float(miss)/len(pm)
+	# print miss
+	# print len(pm)
 	generate_data(24, k)
 
 
@@ -76,29 +78,29 @@ def tolevel(x):
 		return 1
 	if (x<=100):
 		return 2
-	if (x<=150):
-		return 3
-	if (x<=200):
-		return 4
-	if (x<=300):
-		return 5
-	if (x<=500):
-		return 6
-	return 7
+	# if (x<=150):
+	# 	return 3
+	# if (x<=200):
+	# 	return 4
+	# if (x<=300):
+	# 	return 5
+	# if (x<=500):
+	# 	return 6
+	return 3
 
 
 
 def generate_classification():
-	for i in range(7, len(pmd)):
+	for i in range(4, len(pmd)):
 		if pmd[i] < 0:
 			continue
 		temp = []
 
-		for j in range(1, 7):
+		for j in range(1, 4):
 			if pmd[i - j] < 0:
 				break
 			temp.append(pmd[i - j])
-			if j == 2:
+			if j == 3:
 				X_c.append(temp)
 				Y_c.append([tolevel(pmd[i])])
 	#print X_c[0], X_c[1], X_c[2], Y_c[1], Y_c[2]
@@ -139,10 +141,10 @@ for k in range(2008, 2015):
 
 
 
-with open('convert2/'+city+'_x.csv', 'wb') as csvfile:
+with open('convert0/'+city+'_x.csv', 'wb') as csvfile:
 	writer = csv.writer(csvfile, delimiter=',')
 	writer.writerows(X)
-with open('convert2/'+city+'_y.csv', 'wb') as csvfile:
+with open('convert0/'+city+'_y.csv', 'wb') as csvfile:
 	writer = csv.writer(csvfile, delimiter=',')
 	writer.writerows(Y)
 
@@ -156,11 +158,11 @@ with open('classification/'+city+'_y.csv', 'wb') as csvfile:
 	writer.writerows(Y_c)
 
 
-print len(X), len(Y)
+# print len(X), len(Y)
 
 
 
-
+print len(X_c)
 
 # print float(miss)/(len(pm)-1)
 # print miss

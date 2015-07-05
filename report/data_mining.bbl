@@ -1,12 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{level}
+Air quality guide.
+\newblock http://www.stateair.net/web/post/1/1.html.
+
 \bibitem{data}
 Air quality monitoring program.
 \newblock http://www.stateair.net/web/historical/1/1.html.
-
-\bibitem{level}
-Air quality monitoring program.
-\newblock http://www.stateair.net/web/post/1/1.html.
 
 \bibitem{nn}
 Fit data with a neural network.

@@ -17,9 +17,13 @@
     	}
 
 @misc{nn,
-	TITLE = "Air Quality Monitoring Program",
-    howpublished = "http://www.stateair.net/web/post/1/1.html",
-    PUBLISHER = "U.S. Department of State"
+	TITLE = "Fit Data with a Neural Network",
+    howpublished = "http://www.mathworks.com/help/nnet/gs/fit-data-with-a-neural-network.html",
+    PUBLISHER = "The MathWorks, Inc."
     	}
 
-http://www.mathworks.com/help/nnet/gs/fit-data-with-a-neural-network.html
+ @misc{lr,
+	TITLE = "Linear Regression",
+    howpublished = "http://www.mathworks.com/help/matlab/data\_analysis/linear-regression.html",
+    PUBLISHER = "The MathWorks, Inc."
+    	}
