@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.11)  5 JUL 2015 14:25
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2015.6.11)  5 JUL 2015 21:05
 entering extended mode
 **E:/Courses/DataMining/project/pm/report/data_mining.tex
 (E:/Courses/DataMining/project/pm/report/data_mining.tex
@@ -255,80 +255,57 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 121.
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 \c@theorem=\count124
-\c@theorem1=\count125
  [1{C:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 
 ]
+\c@theorem1=\count125
+
 Overfull \hbox (6.49316pt too wide) in paragraph at lines 166--167
 \T1/aer/m/n/9 from 2011 to 2014, Shang-hai, from 2011 to 2014 and Shenyang,
  []
 
+[2] <pic/reg1.pdf, id=21, 614.295pt x 794.97pt>
+File: pic/reg1.pdf Graphic file (type pdf)
+ <use pic/reg1.pdf>
+Package pdftex.def Info: pic/reg1.pdf used on input line 259.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
 
-LaTeX Warning: Citation `convert' on page \thepage  undefined on input line 184
-.
-
-
-LaTeX Warning: Citation `maus' on page \thepage  undefined on input line 188.
-
-
-Overfull \hbox (14.25473pt too wide) in paragraph at lines 188--189
-\T1/aer/m/n/9 ti-lized The Mu-nich Au-to-mat-ic Seg-men-ta-tion Sys-tem (MAUS)[
-\T1/aer/bx/n/9 ?\T1/aer/m/n/9 ]
- []
-
-<code.png, id=17, 689.57625pt x 322.20375pt>
-File: code.png Graphic file (type png)
- <use code.png>
-Package pdftex.def Info: code.png used on input line 197.
-(pdftex.def)             Requested size: 241.3553pt x 112.773pt.
-
-Overfull \hbox (7.7553pt too wide) in paragraph at lines 197--198
+Overfull \hbox (5.71364pt too wide) in paragraph at lines 259--260
  [][] 
  []
 
-
-LaTeX Warning: Citation `mfcc' on page \thepage  undefined on input line 218.
-
-[2 <E:/Courses/DataMining/project/pm/report/code.png>]
-Overfull \hbox (5.51363pt too wide) in paragraph at lines 229--230
-[]\T1/aer/m/n/9 The prob-lem is a bi-na-ry clas-si-fi-ca-tion prob-lem, which m
-ean-
- []
-
-
-Overfull \hbox (1.28557pt too wide) in paragraph at lines 293--294
-\T1/aer/m/n/9 some Man-darin s-peak-er ac-tu-al-ly s-peak per-fec-t English--
- []
-
-[3] (E:\Courses\DataMining\project\pm\report\data_mining.bbl
-Overfull \hbox (20.23921pt too wide) in paragraph at lines 12--14
+(E:\Courses\DataMining\project\pm\report\data_mining.bbl [3 <E:/Courses/DataMin
+ing/project/pm/report/pic/reg1.pdf>]
+Overfull \hbox (20.23921pt too wide) in paragraph at lines 17--19
 \T1/aer/m/n/9 http://www.airnow.gov/index.cfm?action=aqibasics.particle.  
  []
 
-) [4] (E:\Courses\DataMining\project\pm\report\data_mining.aux) ) 
+) [4
+
+] (E:\Courses\DataMining\project\pm\report\data_mining.aux) ) 
 Here is how much of TeX's memory you used:
- 3627 strings out of 495354
- 45424 string characters out of 3183859
- 109785 words of memory out of 3000000
- 6737 multiletter control sequences out of 15000+200000
+ 3625 strings out of 495354
+ 45423 string characters out of 3183859
+ 113788 words of memory out of 3000000
+ 6735 multiletter control sequences out of 15000+200000
  54618 words of font info for 74 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,12n,34p,705b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/CTEX/MiKTe
-X/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmbx9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/CTEX
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/CTEX/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmmi9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.
-pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/CTEX/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmsy9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmti9.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/CTEX/Mi
-KTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/
-utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fon
-ts/type1/urw/times/utmri8a.pfb>
-Output written on data_mining.pdf (4 pages, 200740 bytes).
+ 41i,12n,34p,734b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/CTEX/MiKTeX/fo
+nts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+bx9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/CTEX/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/CTEX/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmmi9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+<C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/CTEX/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmsy9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmti9.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/CTEX/MiKTeX
+/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb
+8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on data_mining.pdf (4 pages, 3073390 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

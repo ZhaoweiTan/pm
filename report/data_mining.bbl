@@ -8,6 +8,11 @@ Air quality monitoring program.
 Air quality monitoring program.
 \newblock http://www.stateair.net/web/post/1/1.html.
 
+\bibitem{nn}
+Fit data with a neural network.
+\newblock
+  http://www.mathworks.com/help/nnet/gs/fit-data-with-a-neural-network.html.
+
 \bibitem{pm}
 Particle pollution (pm).
 \newblock http://www.airnow.gov/index.cfm?action=aqibasics.particle.

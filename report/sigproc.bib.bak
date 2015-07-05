@@ -8,26 +8,18 @@
 	TITLE = "Air Quality Monitoring Program",
     howpublished = "http://www.stateair.net/web/historical/1/1.html",
     PUBLISHER = "U.S. Department of State"
-
     	}
 
+@misc{level,
+	TITLE = "Air Quality Monitoring Program",
+    howpublished = "http://www.stateair.net/web/post/1/1.html",
+    PUBLISHER = "U.S. Department of State"
+    	}
 
-@misc{mfcc,
-  author = "jameslyons",
-  title = "Mel Frequency Cepstral Coefficient (MFCC) tutorial",
-  publisher = "Practical Cryptography",
-  howpublished = "http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/"
-}
+@misc{nn,
+	TITLE = "Air Quality Monitoring Program",
+    howpublished = "http://www.stateair.net/web/post/1/1.html",
+    PUBLISHER = "U.S. Department of State"
+    	}
 
-@misc{convert,
-  title = "MediaHuman Audio Converter",
-  publisher = "MediaHuman",
-  howpublished = "http://www.mediahuman.com/audio-converter/"
-}
-
-@misc{bs,
-  author = "Leonard Richardson",
-  title = "MediaHuman Audio Converter",
-  publisher = "Crummy",
-  howpublished = "http://www.crummy.com/software/BeautifulSoup/"
-}
+http://www.mathworks.com/help/nnet/gs/fit-data-with-a-neural-network.html

@@ -1,10 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: data_mining.aux
 The style file: abbrv.bst
 Database file #1: sigproc.bib
-Warning--I didn't find a database entry for "convert"
-Warning--I didn't find a database entry for "maus"
-Warning--I didn't find a database entry for "mfcc"
 Warning--to sort, need author or key in pm
 Warning--to sort, need author or key in data
 Warning--to sort, need author or key in level
-(There were 6 warnings)
+Warning--to sort, need author or key in nn
+(There were 4 warnings)
